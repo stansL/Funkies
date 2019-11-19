@@ -122,3 +122,19 @@ function interviewQuestion(job) {
 }
 
 interviewQuestion('teacher')('Hellen');
+
+
+/**
+ * Immediately Invoked Function Expressions - IIFE - mostly for data privacy
+ */
+function game() {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+}
+
+//game();
+
+(function (goodLuck) {
+    var score = Math.random() * 10;
+    console.log(score >= 5 - goodLuck);
+})(3);
