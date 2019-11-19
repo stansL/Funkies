@@ -95,3 +95,30 @@ function maxHeartRate(val) {
 }
 
 console.log(arrayCalc(years, maxHeartRate));
+
+
+/**
+ * Functions returning functions
+ */
+
+function interviewQuestion(job) {
+    switch (job) {
+        case 'designer': {
+            return function (name) {
+                console.log(name, ',Please explain what UI/UX is?');
+            };
+        }
+        case 'teacher': {
+            return function (name) {
+                console.log(name, ',What subject do you teach?');
+            };
+        }
+        default: {
+            return function (name) {
+                console.log(name, ',What is it you do?');
+            }
+        }
+    }
+}
+
+interviewQuestion('teacher')('Hellen');
