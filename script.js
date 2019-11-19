@@ -61,3 +61,37 @@ var jane = Object.create(student, {
         value: 'Tech Lead'
     }
 });
+
+/*
+ * First Class Functions
+ *
+ */
+
+var years = [1994, 1965, 1997, 1982, 1998, 1987, 2014];
+
+function arrayCalc(arr, fn) {
+    var arrResult = [];
+    for (var i = 0; i < arr.length; i++) {
+        arrResult.push(fn(arr[i]));
+    }
+    return arrResult;
+}
+
+function callOne(val) {
+    return 2019 - val;
+}
+
+function callTwo(val) {
+    return 60 - (2019 - val);
+}
+
+function maxHeartRate(val) {
+    var age = callOne(val);
+    if (age >= 18 && age <= 81) {
+        return Math.round(206.9 - (0.67 * age));
+    } else {
+        return -1;
+    }
+}
+
+console.log(arrayCalc(years, maxHeartRate));
