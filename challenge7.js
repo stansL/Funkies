@@ -31,30 +31,31 @@ Question.prototype.determineCorrectAnswer = function (answer) {
 }
 
 var questionOne = new Question('First Question', ['Answer One', 'Answer Two', 'Answer Three'], 0);
-var questionTwo = new Question('Second Question', ['Yes', 'No', 1);
-        var questionThree = new Question('Third Question', ['Answer One', 'Answer Two', 'Answer Three'], 2);
+var questionTwo = new Question('Second Question', ['Yes', 'No'], 1);
+var questionThree = new Question('Third Question', ['Answer One', 'Answer Two', 'Answer Three'], 2);
 
-        var questions = [questionOne, questionTwo, questionThree];
-
-
-        var rand = Math.floor(Math.random() * questions.length);
-        //console.log(rand);
-        var selectedQuestion = questions[rand]; console.log(selectedQuestion.displayQuestion());
-        var userResponse = prompt('Enter the correct answer!');
-        while (userResponse !== 'exit') {
-            var answer = Number.parseInt(userResponse);
-            selectedQuestion.determineCorrectAnswer(answer);
+var questions = [questionOne, questionTwo, questionThree];
 
 
-            rand = Math.floor(Math.random() * 3);
-            selectedQuestion = questions[rand];
-            console.log(selectedQuestion.displayQuestion());
-            userResponse = prompt('Enter the correct answer!');
+var rand = Math.floor(Math.random() * questions.length);
+//console.log(rand);
+var selectedQuestion = questions[rand];
+console.log(selectedQuestion.displayQuestion());
+var userResponse = prompt('Enter the correct answer!');
+while (userResponse !== 'exit') {
+    var answer = Number.parseInt(userResponse);
+    selectedQuestion.determineCorrectAnswer(answer);
 
-        }
-        console.log('Final Score is: ' + runningScore);
+
+    rand = Math.floor(Math.random() * 3);
+    selectedQuestion = questions[rand];
+    console.log(selectedQuestion.displayQuestion());
+    userResponse = prompt('Enter the correct answer!');
+
+}
+console.log('Final Score is: ' + runningScore);
 
 
 
 
-        //IIFE
+//IIFE
